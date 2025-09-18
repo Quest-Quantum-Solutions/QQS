@@ -9,7 +9,7 @@
     body {
       margin: 0;
       font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-      color: #e5e5e5;
+      color: #b0b0b0; /* grey text for all */
       background: radial-gradient(ellipse at bottom, #0a0a0a 0%, #121212 100%);
       overflow-x: hidden;
     }
@@ -29,8 +29,9 @@
     }
 
     .sidebar {
-      background-color: #121212;
-      border-right: 1px solid #1c1c1c;
+      background-color: rgba(18, 18, 18, 0.6); /* transparent black */
+      border-right: 1px solid rgba(28, 28, 28, 0.8);
+      backdrop-filter: blur(4px); /* glass effect */
     }
 
     /* Dropdown */
@@ -46,7 +47,15 @@
       transition: 0.3s;
     }
     a:hover {
-      color: #f5c518;
+      color: #f5c518; /* subtle gold accent */
+    }
+
+    footer {
+      margin-top: auto;
+      padding: 1rem;
+      font-size: 0.9rem;
+      text-align: center;
+      color: #b0b0b0;
     }
   </style>
 </head>
@@ -78,6 +87,10 @@
     <section id="dashboard" class="hidden w-full max-w-3xl p-6 bg-gray-900 rounded-xl shadow-lg">
       <!-- Streamlit dashboard will be embedded here later -->
     </section>
+
+    <footer>
+      Contact: <a href="mailto:info.questquantum@gmail.com">info.questquantum@gmail.com</a>
+    </footer>
   </main>
 
 </body>
