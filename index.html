@@ -38,12 +38,10 @@
       margin-top: 4rem;
     }
 
-    .dropdown:hover .dropdown-menu {
-      display: block;
-    }
     .dropdown-menu {
       display: none;
       background-color: rgba(255, 255, 255, 0.0);
+      padding-left: 0;
     }
 
     a {
@@ -79,30 +77,42 @@
       flex-wrap: wrap;
     }
 
-    footer .contact {
-      flex: 1;
-      text-align: left;
-    }
-
-    footer .copyright {
-      flex: 1;
+    footer .contact, footer .copyright, footer .right {
+      flex: 1 1 100%;
       text-align: center;
+      font-size: 0.8rem; /* smaller text for mobile */
+      margin: 0.2rem 0;
     }
 
-    footer .right {
-      flex: 1;
-      text-align: right;
+    @media (min-width: 640px) {
+      footer .contact, footer .copyright, footer .right {
+        flex: 1;
+        text-align: initial;
+        font-size: 0.9rem;
+      }
+    }
+
+    /* Show dropdown on hover for desktop, click for mobile */
+    .dropdown:hover .dropdown-menu {
+      display: block;
+    }
+    @media (max-width: 639px) {
+      .dropdown-menu {
+        display: none;
+      }
+      .dropdown.active .dropdown-menu {
+        display: block;
+      }
     }
   </style>
 </head>
 <body>
 
   <aside class="sidebar w-64 p-6 flex flex-col">
-    <div class="dropdown">
+    <div class="dropdown" id="product-dropdown">
       <h2 class="text-2xl font-bold mb-6 cursor-pointer">Products</h2>
       <ul class="dropdown-menu mt-2 space-y-2">
         <li>
-          <!-- Updated link: opens Streamlit app in the same tab -->
           <a id="dashboard-link" href="https://adaptive-shield-vt18.streamlit.app/">
             AdaptiveShield-VT18
           </a>
@@ -133,6 +143,12 @@
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Mobile dropdown toggle
+    const dropdown = document.getElementById('product-dropdown');
+    dropdown.addEventListener('click', () => {
+      dropdown.classList.toggle('active');
+    });
   </script>
 
 </body>
