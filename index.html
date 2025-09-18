@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,6 +15,8 @@
       overflow-x: hidden;
       position: relative;
       min-height: 100vh;
+      display: flex;
+      flex-direction: column;
     }
 
     /* Universe background using your local image */
@@ -32,7 +35,7 @@
 
     .sidebar {
       background-color: rgba(255, 255, 255, 0.0); /* fully transparent */
-      border-right: 1px solid rgba(255, 255, 255, 0.0); /* remove border */
+      border-right: 1px solid rgba(255, 255, 255, 0.0);
       backdrop-filter: none;
       margin-top: 4rem;
     }
@@ -57,11 +60,11 @@
     main {
       background-color: rgba(255, 255, 255, 0.0); /* fully transparent */
       backdrop-filter: none;
-      margin-top: 6rem;
+      margin-top: 2rem; /* moved slightly up */
       flex: 1;
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      justify-content: flex-start;
       align-items: center;
       text-align: center;
       padding: 0 1.5rem;
@@ -70,29 +73,35 @@
     footer {
       position: relative;
       width: 100%;
-      padding: 1rem 1.5rem;
+      padding: 0.5rem 1.5rem;
       display: flex;
-      justify-content: center;
+      justify-content: space-between;
       align-items: center;
       color: #b0b0b0;
       font-size: 0.9rem;
       flex-shrink: 0;
-      margin-top: auto;
+      flex-wrap: wrap;
     }
 
     footer .contact {
-      position: absolute;
-      left: 1.5rem;
-      bottom: 1rem;
+      order: 1;
     }
 
     footer .copyright {
+      order: 2;
       text-align: center;
-      width: 100%;
+      flex: 1;
+      margin-top: 0.5rem;
+    }
+
+    @media (min-width: 640px) {
+      footer .copyright {
+        margin-top: 0;
+      }
     }
   </style>
 </head>
-<body class="flex flex-col min-h-screen">
+<body>
 
   <!-- Sidebar -->
   <aside class="sidebar w-64 p-6 flex flex-col">
