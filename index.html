@@ -12,6 +12,8 @@
       color: #b0b0b0; /* grey text for all */
       background: none;
       overflow-x: hidden;
+      position: relative;
+      min-height: 100vh;
     }
 
     /* Universe background using your local image */
@@ -32,7 +34,7 @@
       background-color: rgba(255, 255, 255, 0.0); /* fully transparent */
       border-right: 1px solid rgba(255, 255, 255, 0.0); /* remove border */
       backdrop-filter: none;
-      margin-top: 4rem; /* move slightly more down */
+      margin-top: 4rem;
     }
 
     /* Dropdown */
@@ -52,22 +54,45 @@
       color: #f5c518; /* subtle gold accent */
     }
 
-    footer {
-      margin-top: auto;
-      padding: 1rem;
-      font-size: 0.9rem;
-      text-align: center;
-      color: #b0b0b0;
-    }
-
     main {
       background-color: rgba(255, 255, 255, 0.0); /* fully transparent */
       backdrop-filter: none;
-      margin-top: 6rem; /* move slightly more down */
+      margin-top: 6rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 0 1.5rem;
+    }
+
+    footer {
+      position: relative;
+      width: 100%;
+      padding: 1rem 1.5rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #b0b0b0;
+      font-size: 0.9rem;
+      flex-shrink: 0;
+      margin-top: auto;
+    }
+
+    footer .contact {
+      position: absolute;
+      left: 1.5rem;
+      bottom: 1rem;
+    }
+
+    footer .copyright {
+      text-align: center;
+      width: 100%;
     }
   </style>
 </head>
-<body class="flex min-h-screen">
+<body class="flex flex-col min-h-screen">
 
   <!-- Sidebar -->
   <aside class="sidebar w-64 p-6 flex flex-col">
@@ -84,7 +109,7 @@
   </aside>
 
   <!-- Main Content -->
-  <main class="flex-1 flex flex-col justify-center items-center text-center px-6">
+  <main>
     <h1 class="text-5xl font-extrabold mb-4">Quest Quantum Solutions</h1>
     <p class="text-gray-400 text-lg max-w-xl mb-8">
       Quantitative Investment Research
@@ -93,13 +118,21 @@
     <section id="dashboard" class="hidden w-full max-w-3xl p-6 rounded-xl shadow-lg bg-transparent">
       <!-- Streamlit dashboard will be embedded here later -->
     </section>
-
-    <footer>
-      &copy; 2025 Quest Quantum Solutions. All rights reserved. <br>
-      This website and its content are for informational purposes only. Unauthorized use is prohibited. <br>
-      Contact: <a href="mailto:info.questquantum@gmail.com">info.questquantum@gmail.com</a>
-    </footer>
   </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="contact">
+      Contact: <a href="mailto:info.questquantum@gmail.com">info.questquantum@gmail.com</a>
+    </div>
+    <div class="copyright">
+      &copy; <span id="year"></span> Quest Quantum Solutions. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 
 </body>
 </html>
