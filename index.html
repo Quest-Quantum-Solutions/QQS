@@ -10,7 +10,7 @@
       margin: 0;
       font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
       color: #b0b0b0; /* grey text for all */
-      background: radial-gradient(ellipse at bottom, #0a0a0a 0%, #121212 100%);
+      background: none; /* remove the dark gradient */
       overflow-x: hidden;
     }
 
@@ -24,14 +24,14 @@
       height: 100%;
       background: url('QQS_background.png') no-repeat center center;
       background-size: cover;
-      opacity: 0.1; /* subtle stars */
+      opacity: 0.3; /* slightly stronger for visibility */
       z-index: -1;
     }
 
     .sidebar {
-      background-color: rgba(18, 18, 18, 0.6); /* transparent black */
-      border-right: 1px solid rgba(28, 28, 28, 0.8);
-      backdrop-filter: blur(4px); /* glass effect */
+      background-color: rgba(255, 255, 255, 0.0); /* fully transparent */
+      border-right: 1px solid rgba(255, 255, 255, 0.2); /* subtle border if needed */
+      backdrop-filter: none; /* remove blur effect */
     }
 
     /* Dropdown */
@@ -40,6 +40,7 @@
     }
     .dropdown-menu {
       display: none;
+      background-color: rgba(0,0,0,0.5); /* optional: slightly visible menu */
     }
 
     a {
@@ -56,6 +57,11 @@
       font-size: 0.9rem;
       text-align: center;
       color: #b0b0b0;
+    }
+
+    /* Optional: make main content background transparent */
+    main {
+      background-color: rgba(0,0,0,0); 
     }
   </style>
 </head>
@@ -84,7 +90,7 @@
     </p>
 
     <!-- Dashboard section (hidden for now) -->
-    <section id="dashboard" class="hidden w-full max-w-3xl p-6 bg-gray-900 rounded-xl shadow-lg">
+    <section id="dashboard" class="hidden w-full max-w-3xl p-6 rounded-xl shadow-lg bg-transparent">
       <!-- Streamlit dashboard will be embedded here later -->
     </section>
 
