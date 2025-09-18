@@ -93,16 +93,6 @@
       flex: 1;
       text-align: right;
     }
-
-    /* Dashboard iframe */
-    #dashboard-frame {
-      display: none;
-      width: 100%;
-      height: 80vh;
-      border: none;
-      border-radius: 0.5rem;
-      margin-top: 1rem;
-    }
   </style>
 </head>
 <body>
@@ -112,7 +102,8 @@
       <h2 class="text-2xl font-bold mb-6 cursor-pointer">Products</h2>
       <ul class="dropdown-menu mt-2 space-y-2">
         <li>
-          <a id="dashboard-link" class="block px-4 py-2 rounded hover:bg-gray-800 hover:text-white">
+          <!-- Updated link: opens Streamlit app in the same tab -->
+          <a id="dashboard-link" href="https://adaptive-shield-vt18.streamlit.app/">
             AdaptiveShield-VT18
           </a>
         </li>
@@ -125,9 +116,6 @@
     <p class="text-gray-400 text-lg max-w-xl mb-8">
       Quantitative Investment Research
     </p>
-
-    <!-- Dashboard iframe -->
-    <iframe id="dashboard-frame" src=""></iframe>
 
     <section id="dashboard" class="hidden w-full max-w-3xl p-6 rounded-xl shadow-lg bg-transparent">
     </section>
@@ -145,16 +133,6 @@
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Click event to load dashboard in iframe
-    const link = document.getElementById('dashboard-link');
-    const iframe = document.getElementById('dashboard-frame');
-    link.addEventListener('click', () => {
-      iframe.src = "https://adaptive-shield-vt18.streamlit.app/";
-      iframe.style.display = "block";
-      // Scroll to iframe
-      iframe.scrollIntoView({ behavior: 'smooth' });
-    });
   </script>
 
 </body>
