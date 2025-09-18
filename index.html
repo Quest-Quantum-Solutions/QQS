@@ -9,7 +9,7 @@
     body {
       margin: 0;
       font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-      color: #f5f5f5; /* light text for readability */
+      color: #b0b0b0; /* grey text for all */
       background: none; /* remove the dark gradient */
       overflow-x: hidden;
     }
@@ -24,14 +24,14 @@
       height: 100%;
       background: url('QQS_background.png') no-repeat center center;
       background-size: cover;
-      opacity: 0.3; /* slightly stronger for visibility */
+      opacity: 0.3; /* adjust as needed */
       z-index: -1;
     }
 
     .sidebar {
-      background-color: rgba(18, 18, 18, 0.3); /* glass effect */
-      border-right: 1px solid rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(10px); /* glass blur */
+      background-color: rgba(255, 255, 255, 0.0); /* fully transparent */
+      border-right: 1px solid rgba(255, 255, 255, 0.1); /* optional subtle border */
+      backdrop-filter: none; /* remove blur */
     }
 
     /* Dropdown */
@@ -40,12 +40,11 @@
     }
     .dropdown-menu {
       display: none;
-      background-color: rgba(18, 18, 18, 0.4); /* semi-transparent menu */
-      backdrop-filter: blur(8px);
+      background-color: rgba(255, 255, 255, 0.0); /* fully transparent menu */
     }
 
     a {
-      color: #f5f5f5;
+      color: #b0b0b0;
       transition: 0.3s;
     }
     a:hover {
@@ -57,12 +56,12 @@
       padding: 1rem;
       font-size: 0.9rem;
       text-align: center;
-      color: #f5f5f5;
+      color: #b0b0b0;
     }
 
     main {
-      background-color: rgba(18, 18, 18, 0.3); /* glass effect */
-      backdrop-filter: blur(10px);
+      background-color: rgba(255, 255, 255, 0.0); /* fully transparent */
+      backdrop-filter: none; /* remove blur */
     }
   </style>
 </head>
@@ -86,7 +85,7 @@
   <!-- Main Content -->
   <main class="flex-1 flex flex-col justify-center items-center text-center px-6">
     <h1 class="text-5xl font-extrabold mb-4">Quest Quantum Solutions</h1>
-    <p class="text-gray-200 text-lg max-w-xl mb-8">
+    <p class="text-gray-400 text-lg max-w-xl mb-8">
       Quantitative research for professional asset allocation.
     </p>
 
