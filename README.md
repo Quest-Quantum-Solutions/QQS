@@ -1,2 +1,2 @@
 # QQS-Web
-Quest Quaantum Solutions website
+Quest Quantum Solutions website
