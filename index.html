@@ -7,9 +7,15 @@
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <style>
     body {
-      background-color: #0f0f0f; /* dark black/charcoal */
-      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      background-color: #121212; /* softer dark black */
       color: #e5e5e5;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+    .dropdown:hover .dropdown-menu {
+      display: block;
+    }
+    .dropdown-menu {
+      display: none;
     }
     a {
       transition: 0.3s;
@@ -23,25 +29,35 @@
 
   <!-- Sidebar -->
   <aside class="w-64 bg-gray-900 border-r border-gray-800 p-6 flex flex-col">
-    <h2 class="text-2xl font-bold mb-8">Products</h2>
-    <ul class="space-y-4 text-gray-300">
-      <li><a href="#dashboard" class="hover:text-white font-medium">AdaptiveShield-VT18</a></li>
-    </ul>
+    <h2 class="text-2xl font-bold mb-6">Products</h2>
+
+    <!-- Dropdown menu -->
+    <div class="dropdown relative">
+      <button class="w-full text-left px-4 py-2 bg-gray-800 hover:bg-gray-700 rounded-md text-gray-300 font-medium">
+        Select Product
+      </button>
+      <ul class="dropdown-menu mt-2 bg-gray-800 rounded-md border border-gray-700">
+        <li>
+          <a href="#dashboard" class="block px-4 py-2 text-gray-300 hover:bg-gray-700 hover:text-white">
+            AdaptiveShield-VT18
+          </a>
+        </li>
+        <!-- Future products can go here -->
+      </ul>
+    </div>
+
   </aside>
 
   <!-- Main Content -->
   <main class="flex-1 flex flex-col justify-center items-center text-center px-6">
     <h1 class="text-5xl font-extrabold mb-4">Quest Quantum Solutions</h1>
-    <p class="text-lg text-gray-400 mb-8 max-w-xl">
-      Quantitative research and asset allocation strategies built on data-driven insights.
+    <p class="text-lg text-gray-400 max-w-xl">
+      Quantitative research for professional asset allocation.
     </p>
-    <!-- Dashboard placeholder -->
-    <section id="dashboard" class="w-full max-w-3xl p-6 bg-gray-800 rounded-xl shadow-lg">
-      <h3 class="text-2xl font-semibold mb-4">AdaptiveShield-VT18</h3>
-      <p class="text-gray-400 mb-6">Interactive dashboard coming soon.</p>
-      <div class="border border-gray-700 rounded-xl p-10 text-gray-500">
-        Streamlit dashboard placeholder
-      </div>
+
+    <!-- Dashboard section (hidden for now, optional) -->
+    <section id="dashboard" class="hidden w-full max-w-3xl p-6 mt-8 bg-gray-800 rounded-xl shadow-lg">
+      <!-- Streamlit dashboard will be embedded here later -->
     </section>
   </main>
 
