@@ -9,7 +9,7 @@
     body {
       margin: 0;
       font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-      color: #b0b0b0; /* grey text for all */
+      color: #b0b0b0;
       background: none;
       overflow-x: hidden;
       position: relative;
@@ -28,12 +28,12 @@
       height: 100%;
       background: url('QQS_background.png') no-repeat center center;
       background-size: cover;
-      opacity: 1; /* full visibility */
+      opacity: 1;
       z-index: -1;
     }
 
     .sidebar {
-      background-color: rgba(255, 255, 255, 0.0); /* fully transparent */
+      background-color: rgba(255, 255, 255, 0.0);
       border-right: 1px solid rgba(255, 255, 255, 0.0);
       backdrop-filter: none;
       margin-top: 4rem;
@@ -45,7 +45,7 @@
     }
     .dropdown-menu {
       display: none;
-      background-color: rgba(255, 255, 255, 0.0); /* fully transparent */
+      background-color: rgba(255, 255, 255, 0.0);
     }
 
     a {
@@ -53,13 +53,13 @@
       transition: 0.3s;
     }
     a:hover {
-      color: #f5c518; /* subtle gold accent */
+      color: #f5c518;
     }
 
     main {
-      background-color: rgba(255, 255, 255, 0.0); /* fully transparent */
+      background-color: rgba(255, 255, 255, 0.0);
       backdrop-filter: none;
-      margin-top: 2rem; /* moved slightly up */
+      margin-top: 2rem;
       flex: 1;
       display: flex;
       flex-direction: column;
@@ -70,27 +70,34 @@
     }
 
     footer {
-      position: relative;
       width: 100%;
       padding: 0.5rem 1.5rem;
       color: #b0b0b0;
       font-size: 0.9rem;
       flex-shrink: 0;
-      min-height: 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
     }
 
     footer .contact {
-      position: absolute;
-      left: 1.5rem;
-      bottom: 0.5rem;
+      order: 1;
+      font-size: 0.85rem;
     }
 
     footer .copyright {
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-      bottom: 0.5rem;
+      order: 2;
       text-align: center;
+      flex: 1;
+      font-size: 0.85rem;
+      margin-top: 0.5rem;
+    }
+
+    @media (min-width: 640px) {
+      footer .copyright {
+        margin-top: 0;
+      }
     }
   </style>
 </head>
