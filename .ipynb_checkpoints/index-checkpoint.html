@@ -31,7 +31,6 @@
       z-index: -1;
     }
 
-    /* Sidebar */
     .sidebar {
       background-color: rgba(255, 255, 255, 0.0);
       border-right: 1px solid rgba(255, 255, 255, 0.0);
@@ -57,7 +56,7 @@
     main {
       background-color: rgba(255, 255, 255, 0.0);
       backdrop-filter: none;
-      margin-top: 6rem; /* increased from 2rem to move title down */
+      margin-top: 2rem;
       flex: 1;
       display: flex;
       flex-direction: column;
@@ -67,27 +66,33 @@
       padding: 0 1.5rem;
     }
 
-    /* Footer - centered dynamically */
     footer {
       display: flex;
-      flex-direction: column;
+      justify-content: space-between;
       align-items: center;
-      justify-content: center;
-      padding: 2rem 1.5rem; /* increased padding to lower it visually */
+      padding: 0.5rem 1.5rem;
       color: #b0b0b0;
       font-size: 0.9rem;
       flex-shrink: 0;
-      text-align: center;
+      flex-wrap: wrap;
     }
 
-    footer .contact,
-    footer .copyright,
-    footer .right {
+    footer .contact, footer .copyright, footer .right {
+      flex: 1 1 100%;
+      text-align: center;
+      font-size: 0.8rem; /* smaller text for mobile */
       margin: 0.2rem 0;
-      text-align: center;
     }
 
-    /* Dropdown hover for desktop, click for mobile */
+    @media (min-width: 640px) {
+      footer .contact, footer .copyright, footer .right {
+        flex: 1;
+        text-align: initial;
+        font-size: 0.9rem;
+      }
+    }
+
+    /* Show dropdown on hover for desktop, click for mobile */
     .dropdown:hover .dropdown-menu {
       display: block;
     }
@@ -99,25 +104,13 @@
         display: block;
       }
     }
-
-    /* ✅ Desktop: fixed sidebar so content does not move */
-    @media (min-width: 640px) {
-      .sidebar {
-        position: fixed;
-        top: 4rem;
-        left: 0;
-        height: calc(100% - 4rem);
-        z-index: 10;
-      }
-    }
-
   </style>
 </head>
 <body>
 
   <aside class="sidebar w-64 p-6 flex flex-col">
     <div class="dropdown" id="product-dropdown">
-      <h2 class="text-2xl font-bold mb-6 cursor-pointer">Strategies</h2>
+      <h2 class="text-2xl font-bold mb-6 cursor-pointer">Products</h2>
       <ul class="dropdown-menu mt-2 space-y-2">
         <li>
           <a id="dashboard-link" href="https://adaptive-shield-vt18.streamlit.app/">
