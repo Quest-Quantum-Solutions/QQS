@@ -98,6 +98,19 @@
         display: block;
       }
     }
+
+    /* ✅ Desktop: fixed sidebar so main content doesn't move */
+    @media (min-width: 640px) {
+      .sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+      }
+      main {
+        margin-left: 16rem; /* same as sidebar width */
+      }
+    }
   </style>
 </head>
 <body>
@@ -147,5 +160,6 @@
 
 </body>
 </html>
+
 
 
