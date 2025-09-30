@@ -66,30 +66,24 @@
       padding: 0 1.5rem;
     }
 
+    /* ✅ Updated footer style - always centered and responsive */
     footer {
       display: flex;
-      justify-content: space-between;
+      flex-direction: column;
       align-items: center;
+      justify-content: center;
       padding: 0.5rem 1.5rem;
       color: #b0b0b0;
       font-size: 0.9rem;
       flex-shrink: 0;
-      flex-wrap: wrap;
-    }
-
-    footer .contact, footer .copyright, footer .right {
-      flex: 1 1 100%;
       text-align: center;
-      font-size: 0.8rem; /* smaller text for mobile */
-      margin: 0.2rem 0;
     }
 
-    @media (min-width: 640px) {
-      footer .contact, footer .copyright, footer .right {
-        flex: 1;
-        text-align: initial;
-        font-size: 0.9rem;
-      }
+    footer .contact,
+    footer .copyright,
+    footer .right {
+      margin: 0.2rem 0;
+      text-align: center;
     }
 
     /* Show dropdown on hover for desktop, click for mobile */
@@ -153,4 +147,5 @@
 
 </body>
 </html>
+
 
