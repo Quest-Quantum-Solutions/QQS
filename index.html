@@ -52,6 +52,16 @@
       color: #f5c518;
     }
 
+    .strategy-link {
+      color: #b0b0b0;
+      cursor: pointer;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .strategy-link:hover {
+      color: #f5c518;
+    }
+
     main {
       background-color: rgba(255, 255, 255, 0.0);
       backdrop-filter: none;
@@ -78,9 +88,7 @@
       text-align: center;
     }
 
-    footer .contact,
-    footer .copyright,
-    footer .right {
+    footer .copyright {
       margin: 0.2rem 0;
       text-align: center;
     }
@@ -113,13 +121,9 @@
   </main>
 
   <footer>
-    <div class="contact">
-      Contact: <a href="mailto:info.questquantum@gmail.com">info.questquantum@gmail.com</a>
-    </div>
     <div class="copyright">
       &copy; <span id="year"></span> Quest Quantum Solutions. All rights reserved.
     </div>
-    <div class="right"></div>
   </footer>
 
   <script>
@@ -145,17 +149,14 @@
         main.innerHTML = `
           <h2 class="text-3xl font-bold mb-4">Contact</h2>
           <p class="text-gray-400 text-lg max-w-xl mb-8">
-            Email us at: <a href="mailto:info.questquantum@gmail.com">info.questquantum@gmail.com</a>
+            You can reach us through the Contact button.
           </p>
         `;
       } else if (section === 'strategies') {
         main.innerHTML = `
           <h2 class="text-3xl font-bold mb-4">Strategies</h2>
           <p class="text-gray-400 text-lg max-w-xl mb-8">
-            AdaptiveShield-VT
-          </p>
-          <p class="text-gray-400 text-lg max-w-xl">
-            <a href="https://adaptive-shield-vt18.streamlit.app/" target="_blank">Open App</a>
+            <a class="strategy-link" href="https://adaptive-shield-vt18.streamlit.app/" target="_blank">AdaptiveShield-VT18</a>
           </p>
         `;
       }
@@ -164,3 +165,4 @@
 
 </body>
 </html>
+
