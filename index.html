@@ -36,14 +36,14 @@
       background-color: rgba(255, 255, 255, 0.0);
       border-right: 1px solid rgba(255, 255, 255, 0.0);
       backdrop-filter: none;
-      margin-top: 6rem; /* pushed down for professional look */
+      margin-top: 8rem; /* pushed slightly more down */
       padding-left: 1.5rem;
     }
 
     .sidebar a.main-link {
       display: block;
       font-size: 1.2rem;
-      margin-bottom: 1.5rem; /* more space between buttons */
+      margin-bottom: 1.5rem;
       color: #b0b0b0;
       text-decoration: none;
       cursor: pointer;
@@ -52,16 +52,14 @@
       color: #f5c518;
     }
 
-    /* Dropdown under Strategies */
     .dropdown-menu {
       display: none;
       background-color: rgba(255, 255, 255, 0.0);
       padding-left: 1rem;
       margin-top: 0.5rem;
     }
-
     .dropdown-menu a {
-      font-size: 0.9rem; /* smaller than main buttons */
+      font-size: 0.9rem;
       display: block;
       margin-bottom: 0.5rem;
       color: #b0b0b0;
@@ -83,7 +81,6 @@
       padding: 0 1.5rem;
     }
 
-    /* Footer */
     footer {
       display: flex;
       flex-direction: column;
@@ -103,26 +100,21 @@
       text-align: center;
     }
 
-    /* Dropdown hover for desktop, click for mobile */
     .dropdown:hover .dropdown-menu {
       display: block;
     }
+
     @media (max-width: 639px) {
-      .dropdown-menu {
-        display: none;
-      }
-      .dropdown.active .dropdown-menu {
-        display: block;
-      }
+      .dropdown-menu { display: none; }
+      .dropdown.active .dropdown-menu { display: block; }
     }
 
-    /* Desktop: fixed sidebar */
     @media (min-width: 640px) {
       .sidebar {
         position: fixed;
-        top: 6rem;
+        top: 8rem;
         left: 0;
-        height: calc(100% - 6rem);
+        height: calc(100% - 8rem);
         z-index: 10;
       }
     }
@@ -131,8 +123,8 @@
 <body>
 
   <aside class="sidebar w-64 flex flex-col">
-    <a href="#" class="main-link">Home</a>
-    <a href="#" class="main-link">Mission</a>
+    <a href="#home" class="main-link">Home (demo)</a>
+    <a href="#mission" class="main-link">Mission (demo)</a>
 
     <div class="dropdown">
       <a class="main-link cursor-pointer">Strategies</a>
@@ -145,7 +137,7 @@
       </ul>
     </div>
 
-    <a href="#" class="main-link">Contact</a>
+    <a href="#contact" class="main-link">Contact (demo)</a>
   </aside>
 
   <main>
@@ -154,8 +146,7 @@
       Quantitative Research &amp; Proprietary Trading Firm
     </p>
 
-    <section id="dashboard" class="hidden w-full max-w-3xl p-6 rounded-xl shadow-lg bg-transparent">
-    </section>
+    <section id="dashboard" class="hidden w-full max-w-3xl p-6 rounded-xl shadow-lg bg-transparent"></section>
   </main>
 
   <footer>
@@ -171,7 +162,6 @@
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Mobile dropdown toggle
     const dropdown = document.querySelector('.dropdown > .main-link');
     dropdown.addEventListener('click', () => {
       dropdown.parentElement.classList.toggle('active');
