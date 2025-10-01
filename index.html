@@ -36,18 +36,21 @@
       background-color: rgba(255, 255, 255, 0.0);
       border-right: 1px solid rgba(255, 255, 255, 0.0);
       backdrop-filter: none;
-      margin-top: 4rem;
+      margin-top: 6rem; /* moved down */
     }
 
-    .sidebar a.simple-link {
+    .sidebar a.simple-link,
+    .sidebar h2 { /* Make Strategies same size as other buttons */
       display: block;
-      font-size: 1rem; /* smaller than Strategies */
+      font-size: 1rem;
       margin-bottom: 1rem;
       color: #b0b0b0;
       text-decoration: none;
       cursor: pointer;
     }
-    .sidebar a.simple-link:hover {
+
+    .sidebar a.simple-link:hover,
+    .sidebar h2:hover {
       color: #f5c518;
     }
 
@@ -57,19 +60,10 @@
       padding-left: 0;
     }
 
-    a {
-      color: #b0b0b0;
-      transition: 0.3s;
-      cursor: pointer;
-    }
-    a:hover {
-      color: #f5c518;
-    }
-
     main {
       background-color: rgba(255, 255, 255, 0.0);
       backdrop-filter: none;
-      margin-top: 6rem; /* increased from 2rem to move title down */
+      margin-top: 6rem; /* keeps title position */
       flex: 1;
       display: flex;
       flex-direction: column;
@@ -85,7 +79,7 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      padding: 2rem 1.5rem; /* increased padding to lower it visually */
+      padding: 2rem 1.5rem; 
       color: #b0b0b0;
       font-size: 0.9rem;
       flex-shrink: 0;
@@ -112,13 +106,13 @@
       }
     }
 
-    /* ✅ Desktop: fixed sidebar so content does not move */
+    /* Desktop: fixed sidebar so content does not move */
     @media (min-width: 640px) {
       .sidebar {
         position: fixed;
-        top: 4rem;
+        top: 6rem; /* aligned with margin-top */
         left: 0;
-        height: calc(100% - 4rem);
+        height: calc(100% - 6rem);
         z-index: 10;
       }
     }
@@ -128,14 +122,13 @@
 <body>
 
   <aside class="sidebar w-64 p-6 flex flex-col">
-    <!-- New buttons -->
+    <!-- Buttons in correct sequence -->
     <a href="#" class="simple-link">Home</a>
     <a href="#" class="simple-link">Mission</a>
-    <a href="#" class="simple-link">Contact</a>
 
-    <!-- Existing Strategies dropdown -->
+    <!-- Strategies dropdown (same size as others) -->
     <div class="dropdown" id="product-dropdown">
-      <h2 class="text-2xl font-bold mb-6 cursor-pointer">Strategies</h2>
+      <h2 class="mb-6 cursor-pointer">Strategies</h2>
       <ul class="dropdown-menu mt-2 space-y-2">
         <li>
           <a id="dashboard-link" href="https://adaptive-shield-vt18.streamlit.app/">
@@ -144,6 +137,8 @@
         </li>
       </ul>
     </div>
+
+    <a href="#" class="simple-link">Contact</a>
   </aside>
 
   <main>
