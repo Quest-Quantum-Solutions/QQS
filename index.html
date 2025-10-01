@@ -52,22 +52,6 @@
       color: #f5c518;
     }
 
-    .dropdown-menu {
-      display: none;
-      background-color: rgba(255, 255, 255, 0.0);
-      padding-left: 1rem;
-      margin-top: 0.5rem;
-    }
-    .dropdown-menu a {
-      font-size: 0.9rem;
-      display: block;
-      margin-bottom: 0.5rem;
-      color: #b0b0b0;
-    }
-    .dropdown-menu a:hover {
-      color: #f5c518;
-    }
-
     main {
       background-color: rgba(255, 255, 255, 0.0);
       backdrop-filter: none;
@@ -101,15 +85,6 @@
       text-align: center;
     }
 
-    .dropdown:hover .dropdown-menu {
-      display: block;
-    }
-
-    @media (max-width: 639px) {
-      .dropdown-menu { display: none; }
-      .dropdown.active .dropdown-menu { display: block; }
-    }
-
     @media (min-width: 640px) {
       .sidebar {
         position: fixed;
@@ -127,17 +102,7 @@
     <a href="#" class="main-link" onclick="showContent('home')">Home</a>
     <a href="#" class="main-link" onclick="showContent('mission')">Mission</a>
     <a href="#" class="main-link" onclick="showContent('contact')">Contact</a>
-
-    <div class="dropdown">
-      <a class="main-link cursor-pointer" onclick="showContent('strategies')">Strategies</a>
-      <ul class="dropdown-menu">
-        <li>
-          <a id="dashboard-link" href="https://adaptive-shield-vt18.streamlit.app/">
-            AdaptiveShield-VT18
-          </a>
-        </li>
-      </ul>
-    </div>
+    <a href="#" class="main-link" onclick="showContent('strategies')">Strategies</a>
   </aside>
 
   <main id="main-content">
@@ -159,11 +124,6 @@
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
-
-    const dropdown = document.querySelector('.dropdown > .main-link');
-    dropdown.addEventListener('click', () => {
-      dropdown.parentElement.classList.toggle('active');
-    });
 
     function showContent(section) {
       const main = document.getElementById('main-content');
@@ -191,9 +151,12 @@
       } else if (section === 'strategies') {
         main.innerHTML = `
           <h2 class="text-3xl font-bold mb-4">Strategies</h2>
-          <ul class="text-gray-400 text-lg">
-            <li><a id="dashboard-link" href="https://adaptive-shield-vt18.streamlit.app/">AdaptiveShield-VT18</a></li>
-          </ul>
+          <p class="text-gray-400 text-lg max-w-xl mb-8">
+            AdaptiveShield-VT
+          </p>
+          <p class="text-gray-400 text-lg max-w-xl">
+            <a href="https://adaptive-shield-vt18.streamlit.app/" target="_blank">Open App</a>
+          </p>
         `;
       }
     }
