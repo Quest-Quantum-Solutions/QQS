@@ -102,15 +102,43 @@
       text-align: center;
     }
 
+    /* Mobile top bar for navigation */
+    .mobile-nav {
+      display: none;
+    }
+
     @media (max-width: 639px) {
       .sidebar {
-        display: none; /* hide sidebar on small screens */
+        display: none; /* hide desktop sidebar on mobile */
+      }
+      .mobile-nav {
+        display: flex;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: rgba(0,0,0,0.7);
+        backdrop-filter: blur(8px);
+        justify-content: space-around;
+        padding: 0.5rem 0;
+        z-index: 20;
+      }
+      .mobile-nav a {
+        color: #b0b0b0;
+        text-decoration: none;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+      }
+      .mobile-nav a:hover {
+        color: #f5c518;
+        text-shadow: 0 0 6px #f5c518;
       }
     }
   </style>
 </head>
 <body>
 
+  <!-- Desktop Sidebar -->
   <aside class="sidebar sm:flex">
     <a href="#" class="main-link" onclick="showContent('home')">Home</a>
     <a href="#" class="main-link" onclick="showContent('mission')">Mission</a>
@@ -118,7 +146,15 @@
     <a href="#" class="main-link" onclick="showContent('contact')">Contact</a>
   </aside>
 
-  <main id="main-content">
+  <!-- Mobile Top Navigation -->
+  <div class="mobile-nav sm:hidden">
+    <a href="#" onclick="showContent('home')">Home</a>
+    <a href="#" onclick="showContent('mission')">Mission</a>
+    <a href="#" onclick="showContent('strategies')">Strategies</a>
+    <a href="#" onclick="showContent('contact')">Contact</a>
+  </div>
+
+  <main id="main-content" class="mt-20 sm:mt-0">
     <div class="bg-black bg-opacity-50 backdrop-blur-md p-6 rounded-xl inline-block">
       <h1 class="text-5xl font-extrabold mb-4 text-white drop-shadow-lg">
         Quest Quantum Solutions
