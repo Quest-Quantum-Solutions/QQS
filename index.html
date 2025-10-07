@@ -33,9 +33,9 @@
 
     /* Sidebar */
     .sidebar {
-      background-color: rgba(255, 255, 255, 0.0);
-      border-right: 1px solid rgba(255, 255, 255, 0.0);
-      backdrop-filter: none;
+      background: rgba(0, 0, 0, 0.5); /* Added translucent background */
+      backdrop-filter: blur(4px); /* Slight blur for contrast */
+      border-right: 1px solid rgba(255, 255, 255, 0.1);
       margin-top: 8rem;
       padding-left: 1.5rem;
     }
@@ -114,10 +114,12 @@
   </aside>
 
   <main id="main-content">
-    <h1 class="text-5xl font-extrabold mb-4">Quest Quantum Solutions</h1>
-    <p class="text-gray-400 text-lg max-w-xl mb-8">
-      Quantitative Research &amp; Proprietary Trading Firm
-    </p>
+    <div class="bg-black bg-opacity-60 p-6 rounded-xl inline-block"> <!-- Added dark transparent box -->
+      <h1 class="text-5xl font-extrabold mb-4">Quest Quantum Solutions</h1>
+      <p class="text-gray-300 text-lg max-w-xl mb-8">
+        Quantitative Research &amp; Proprietary Trading Firm
+      </p>
+    </div>
   </main>
 
   <footer>
@@ -133,31 +135,39 @@
       const main = document.getElementById('main-content');
       if (section === 'home') {
         main.innerHTML = `
-          <h1 class="text-5xl font-extrabold mb-4">Quest Quantum Solutions</h1>
-          <p class="text-gray-400 text-lg max-w-xl mb-8">
-            Quantitative Research &amp; Proprietary Trading Firm
-          </p>
+          <div class="bg-black bg-opacity-60 p-6 rounded-xl inline-block">
+            <h1 class="text-5xl font-extrabold mb-4">Quest Quantum Solutions</h1>
+            <p class="text-gray-300 text-lg max-w-xl mb-8">
+              Quantitative Research &amp; Proprietary Trading Firm
+            </p>
+          </div>
         `;
       } else if (section === 'mission') {
         main.innerHTML = `
-          <h2 class="text-3xl font-bold mb-4">Mission</h2>
-          <p class="text-gray-400 text-lg max-w-xl mb-8">
-            Develop and deliver cutting-edge quantitative research and proprietary trading strategies that are robust, risk-aware, and adaptable to complex market conditions.
-          </p>
+          <div class="bg-black bg-opacity-60 p-6 rounded-xl inline-block">
+            <h2 class="text-3xl font-bold mb-4">Mission</h2>
+            <p class="text-gray-300 text-lg max-w-xl mb-8">
+              Develop and deliver cutting-edge quantitative research and proprietary trading strategies that are robust, risk-aware, and adaptable to complex market conditions.
+            </p>
+          </div>
         `;
       } else if (section === 'contact') {
         main.innerHTML = `
-          <h2 class="text-3xl font-bold mb-4">Contact</h2>
-          <p class="text-gray-400 text-lg max-w-xl mb-8">
-            info.questquantum@gmail.com
-          </p>
+          <div class="bg-black bg-opacity-60 p-6 rounded-xl inline-block">
+            <h2 class="text-3xl font-bold mb-4">Contact</h2>
+            <p class="text-gray-300 text-lg max-w-xl mb-8">
+              info.questquantum@gmail.com
+            </p>
+          </div>
         `;
       } else if (section === 'strategies') {
         main.innerHTML = `
-          <h2 class="text-3xl font-bold mb-4">Strategies</h2>
-          <p class="text-gray-400 text-lg max-w-xl mb-8">
-            <a class="strategy-link" href="https://adaptive-shield-vt18.streamlit.app/">AdaptiveShield-VT18</a>
-          </p>
+          <div class="bg-black bg-opacity-60 p-6 rounded-xl inline-block">
+            <h2 class="text-3xl font-bold mb-4">Strategies</h2>
+            <p class="text-gray-300 text-lg max-w-xl mb-8">
+              <a class="strategy-link" href="https://adaptive-shield-vt18.streamlit.app/">AdaptiveShield-VT18</a>
+            </p>
+          </div>
         `;
       }
     }
@@ -165,4 +175,3 @@
 
 </body>
 </html>
-
