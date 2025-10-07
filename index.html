@@ -33,9 +33,9 @@
 
     /* Sidebar */
     .sidebar {
-      background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.4)); /* subtle gradient */
-      backdrop-filter: blur(8px); /* stronger blur for elegance */
-      border-radius: 1rem;          /* rounded corners */
+      background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.4));
+      backdrop-filter: blur(8px);
+      border-radius: 1rem;
       padding: 2rem 1.5rem;
       position: fixed;
       top: 10%;
@@ -102,14 +102,16 @@
       text-align: center;
     }
 
-    @media (min-width: 640px) {
-      /* sidebar already fixed, no extra change needed */
+    @media (max-width: 639px) {
+      .sidebar {
+        display: none; /* hide sidebar on small screens */
+      }
     }
   </style>
 </head>
 <body>
 
-  <aside class="sidebar">
+  <aside class="sidebar sm:flex">
     <a href="#" class="main-link" onclick="showContent('home')">Home</a>
     <a href="#" class="main-link" onclick="showContent('mission')">Mission</a>
     <a href="#" class="main-link" onclick="showContent('strategies')">Strategies</a>
@@ -117,9 +119,11 @@
   </aside>
 
   <main id="main-content">
-    <div class="bg-black bg-opacity-60 p-6 rounded-xl inline-block"> <!-- dark transparent box -->
-      <h1 class="text-5xl font-extrabold mb-4">Quest Quantum Solutions</h1>
-      <p class="text-gray-300 text-lg max-w-xl mb-8">
+    <div class="bg-black bg-opacity-50 backdrop-blur-md p-6 rounded-xl inline-block">
+      <h1 class="text-5xl font-extrabold mb-4 text-white drop-shadow-lg">
+        Quest Quantum Solutions
+      </h1>
+      <p class="text-gray-300 text-lg max-w-xl mb-8 drop-shadow">
         Quantitative Research &amp; Proprietary Trading Firm
       </p>
     </div>
@@ -136,41 +140,38 @@
 
     function showContent(section) {
       const main = document.getElementById('main-content');
+      const contentBoxStart = `<div class="bg-black bg-opacity-50 backdrop-blur-md p-6 rounded-xl inline-block">`;
+      const contentBoxEnd = `</div>`;
+      
       if (section === 'home') {
         main.innerHTML = `
-          <div class="bg-black bg-opacity-60 p-6 rounded-xl inline-block">
-            <h1 class="text-5xl font-extrabold mb-4">Quest Quantum Solutions</h1>
-            <p class="text-gray-300 text-lg max-w-xl mb-8">
-              Quantitative Research &amp; Proprietary Trading Firm
-            </p>
-          </div>
+          ${contentBoxStart}
+            <h1 class="text-5xl font-extrabold mb-4 text-white drop-shadow-lg">Quest Quantum Solutions</h1>
+            <p class="text-gray-300 text-lg max-w-xl mb-8 drop-shadow">Quantitative Research &amp; Proprietary Trading Firm</p>
+          ${contentBoxEnd}
         `;
       } else if (section === 'mission') {
         main.innerHTML = `
-          <div class="bg-black bg-opacity-60 p-6 rounded-xl inline-block">
-            <h2 class="text-3xl font-bold mb-4">Mission</h2>
-            <p class="text-gray-300 text-lg max-w-xl mb-8">
-              Develop and deliver cutting-edge quantitative research and proprietary trading strategies that are robust, risk-aware, and adaptable to complex market conditions.
-            </p>
-          </div>
+          ${contentBoxStart}
+            <h2 class="text-3xl font-bold mb-4 text-white drop-shadow-lg">Mission</h2>
+            <p class="text-gray-300 text-lg max-w-xl mb-8 drop-shadow">Develop and deliver cutting-edge quantitative research and proprietary trading strategies that are robust, risk-aware, and adaptable to complex market conditions.</p>
+          ${contentBoxEnd}
         `;
       } else if (section === 'contact') {
         main.innerHTML = `
-          <div class="bg-black bg-opacity-60 p-6 rounded-xl inline-block">
-            <h2 class="text-3xl font-bold mb-4">Contact</h2>
-            <p class="text-gray-300 text-lg max-w-xl mb-8">
-              info.questquantum@gmail.com
-            </p>
-          </div>
+          ${contentBoxStart}
+            <h2 class="text-3xl font-bold mb-4 text-white drop-shadow-lg">Contact</h2>
+            <p class="text-gray-300 text-lg max-w-xl mb-8 drop-shadow">info.questquantum@gmail.com</p>
+          ${contentBoxEnd}
         `;
       } else if (section === 'strategies') {
         main.innerHTML = `
-          <div class="bg-black bg-opacity-60 p-6 rounded-xl inline-block">
-            <h2 class="text-3xl font-bold mb-4">Strategies</h2>
-            <p class="text-gray-300 text-lg max-w-xl mb-8">
+          ${contentBoxStart}
+            <h2 class="text-3xl font-bold mb-4 text-white drop-shadow-lg">Strategies</h2>
+            <p class="text-gray-300 text-lg max-w-xl mb-8 drop-shadow">
               <a class="strategy-link" href="https://adaptive-shield-vt18.streamlit.app/">AdaptiveShield-VT18</a>
             </p>
-          </div>
+          ${contentBoxEnd}
         `;
       }
     }
