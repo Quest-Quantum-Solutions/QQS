@@ -38,7 +38,7 @@
       border-radius: 1rem;
       padding: 2rem 1.5rem;
       position: fixed;
-      top: 15%; /* increased from 10% */
+      top: 15%;
       left: 1rem;
       width: 16rem;
       z-index: 10;
@@ -109,7 +109,7 @@
 
     @media (max-width: 639px) {
       .sidebar {
-        display: none; /* hide desktop sidebar on mobile */
+        display: none;
       }
       .mobile-nav {
         display: flex;
@@ -154,7 +154,7 @@
     <a href="#" onclick="showContent('contact')">Contact</a>
   </div>
 
-  <main id="main-content" class="mt-20 sm:mt-16"> <!-- increased top margin on desktop -->
+  <main id="main-content" class="mt-20 sm:mt-16">
     <div class="bg-black bg-opacity-50 backdrop-blur-md p-6 rounded-xl inline-block">
       <h1 class="text-5xl font-extrabold mb-4 text-white drop-shadow-lg">
         Quest Quantum Solutions
@@ -205,7 +205,7 @@
           ${contentBoxStart}
             <h2 class="text-3xl font-bold mb-4 text-white drop-shadow-lg">Strategies</h2>
             <p class="text-gray-300 text-lg max-w-xl mb-8 drop-shadow">
-              <a class="strategy-link" href="https://adaptive-shield-vt18.streamlit.app/">AdaptiveShield-VT18</a>
+              <a class="strategy-link" href="#" onclick="return false;">AdaptiveShield-VT18</a>
             </p>
           ${contentBoxEnd}
         `;
